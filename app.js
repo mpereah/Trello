@@ -8,7 +8,7 @@ if (!process.env.TOKEN && !process.env.KEY){
 let Trello = require("trello");
 let trello = new Trello(process.env.KEY, process.env.TOKEN);
 
-let carTitle = `creado desde node js `
+let carTitle = `new cards en board `
 
 trello.addCard(carTitle, "LaunchX Card Description", IdCard,
     function (error, trelloCard){
