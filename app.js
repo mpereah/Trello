@@ -1,3 +1,4 @@
+const IdCard = require('./IdCard')
 require('dotenv').config()
 
 if (!process.env.TOKEN && !process.env.KEY){
@@ -7,9 +8,9 @@ if (!process.env.TOKEN && !process.env.KEY){
 let Trello = require("trello");
 let trello = new Trello(process.env.KEY, process.env.TOKEN);
 
-let carTitle = `Card nueva ${new Date()}`
+let carTitle = `creado desde node js `
 
-trello.addCard(carTitle, "LaunchX Card Description", "627ec3d9c7e23b105359fba8",
+trello.addCard(carTitle, "LaunchX Card Description", IdCard,
     function (error, trelloCard){
         if (error){
             console.log('Could not add Card', error);
